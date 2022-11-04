@@ -72,9 +72,12 @@ function App() {
         }
         setTimeout(() => {
           clearInterval(intervalRef.current)
+          arr.sort(function (a, b) {
+            return new Date(b.timeStamp) - new Date(a.timeStamp);
+          });
+          setData(arr);
           setTimer(30)
           startTimer()
-          setData(arr);
         }, 500)
 
       })
